@@ -1,0 +1,59 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Лабораторна Робота №1
+    </ion-title>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-title>
+      Гнатюк Анна
+    </ion-title>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-title>
+      КН-32 Варіант №7
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>
+        Завдання №2
+      </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p class="p_background">На заданому проміжку чисел [a,b] знайдіть добуток чисел, кратних 6.</p>
+
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-item>
+              <ion-label position="floating">a:</ion-label>
+              <ion-input type="number" id="a" value="1" #Inputa></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col>
+            <ion-item>
+              <ion-label position="floating">b:</ion-label>
+              <ion-input type="number" id="b" value="7" #Inputb></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+      <ion-button expand="block" (click)="ras(Inputa.value, Inputb.value)">Порахувати </ion-button>
+      <ion-item>
+        <p> Результат: {{d}}</p>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-title>
+      Lab1
+    </ion-title>
+  </ion-toolbar>
+</ion-footer>
