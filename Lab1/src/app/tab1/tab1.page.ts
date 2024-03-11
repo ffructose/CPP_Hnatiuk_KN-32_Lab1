@@ -26,15 +26,15 @@ export class Tab1Page {
       if ((isNaN(this.a) == true) || (isNaN(this.b) == true)) {
         throw new Error('Parameter is not a number!')
       }
-      if ((this.a > 10) && (this.a < 15)) {
+      if ((this.a >= 10) && (this.a <= 15)) {
         this.d = this.a;
         this.count = this.count + 1;
       }
-      if ((this.b > 10) && (this.b < 15)) {
+      if ((this.b >= 10) && (this.b <= 15)) {
         this.d = this.d * this.b;
         this.count = this.count + 1;
       }
-      if ((this.c > 10) && (this.c < 15)) {
+      if ((this.c >= 10) && (this.c <= 15)) {
         this.d = this.d * this.c;
         this.count = this.count + 1;
       }
