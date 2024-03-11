@@ -33,8 +33,7 @@ export class Tab3Page {
         this.a[i] = Array(this.n);
 
         for(j=0;j<this.n;j++){
-          let aa:number = Math.floor(Math.random() * 100);
-          this.a[i][j]= parseFloat(aa.toFixed(2));
+          this.a[i][j] = Math.floor(Math.random() * 201) - 100;
         }
       }
 
@@ -53,3 +52,4 @@ export class Tab3Page {
   }
 
 }
+
