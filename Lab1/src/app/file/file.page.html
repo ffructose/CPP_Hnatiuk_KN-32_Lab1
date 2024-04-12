@@ -1,0 +1,77 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="danger">
+    <ion-buttons slot="start">
+      <ion-menu-button color="dark" menu="first"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Лабораторні Роботи
+    </ion-title>
+  </ion-toolbar>
+
+  <ion-toolbar>
+    <ion-title>
+      Гнатюк Анна
+    </ion-title>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-title>
+      КН-32 Варіант №7
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Завдання </ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <h1 class="task_h1">
+        Позначити кольором групи, де кількість студентів менше за введене у форму значення.
+      </h1>
+
+      <ion-item>
+        <ion-label position="stacked">Введіть кількість студентів:</ion-label>
+        <ion-input type="number" id="x" placeholder="0" [(ngModel)]="Inputx"></ion-input>
+      </ion-item>
+
+      <ion-button color="danger" expand="block" (click)="load()">Знайти</ion-button>
+      <ion-item>
+        <ion-list>
+          <ion-item button *ngFor="let item of data_users; index as i" detail (click)=" toggleDetails(i)">
+            <ion-label *ngIf="!showDetails[i]" text-wrap>
+              <h2 [ngStyle]="{color: getColor(item.amount,Inputx)}">
+                <span>
+                  Назва групи:
+                </span>
+                {{item.group}}
+              </h2>
+            </ion-label>
+            <ion-text *ngIf="showDetails[i]">
+              <ion-text>
+                <h2>
+                  Курс:
+                </h2>
+                {{item.course}}
+              </ion-text>
+              <ion-text>
+                <h2>
+                  Староста:
+                </h2>
+                {{item.president}}
+              </ion-text>
+              <ion-text>
+                <h2 [ngStyle]="{color: getColor(item.amount,Inputx)}">
+                  Кількість студентів:
+                </h2>
+                {{item.amount}}
+              </ion-text>
+
+            </ion-text>
+          </ion-item>
+        </ion-list>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
