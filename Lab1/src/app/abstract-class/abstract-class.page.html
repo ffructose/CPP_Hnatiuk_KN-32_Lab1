@@ -28,9 +28,17 @@
 
     <ion-card-content>
       <h1 class="task_h1">
-        Позначити кольором групи, де кількість студентів менше за введене у форму значення.
+        <span class="task_color">Батьківський клас: </span> Меблі (поле назва) <br>
+        <span class="task_color">Нащадки: </span> Шафа (поле об‘єм V в см); Диван (поле площа S в см) <br>
+          <span class="task_color">Методи: </span> Вартість меблів Шафа С = 75,0 * V; Диван С = S^2 / 3 + 5000 <br>
       </h1>
 
+    </ion-card-content>
+    <ion-card-content>
+      <ion-input id="x" type="number" placeholder="10" [(ngModel)]="Inputx"></ion-input>
+      <ion-button (click)="res(Inputx)" >Порахувати</ion-button>
+      <p >{{getAverage()}}</p>
+      <p *ngFor="let fur of furniture" >{{fur.show()}}</p>
     </ion-card-content>
   </ion-card>
 </ion-content>
