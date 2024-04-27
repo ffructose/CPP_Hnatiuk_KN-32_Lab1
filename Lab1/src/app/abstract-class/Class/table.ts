@@ -1,6 +1,6 @@
 import { Furniture } from "./furniture";
 
-export class Sofa extends Furniture{
+export class Table extends Furniture{
   constructor(
     override name:string,
     override value: number){
@@ -8,11 +8,9 @@ export class Sofa extends Furniture{
   }
 
   getCost(){
-    this.cost = (this.value*this.value)/3 + 5000;
+    this.cost = 24*this.value+980;
   }
   show(){
     return ("Name: " + this.name + "; S: " + this.value + "; Cost: " + this.cost + ";")
   }
-
 }
-

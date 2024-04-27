@@ -2,12 +2,16 @@ import { Component, OnInit } from '@angular/core';
 import { Furniture } from './Class/furniture';
 import { Cupboard } from './Class/cupboard';
 import { Sofa } from './Class/sofa';
+import { Table } from './Class/table';
+
 
 @Component({
   selector: 'app-abstract-class',
   templateUrl: './abstract-class.page.html',
   styleUrls: ['./abstract-class.page.scss'],
 })
+
+
 export class AbstractClassPage implements OnInit {
 
   //polymorf container
