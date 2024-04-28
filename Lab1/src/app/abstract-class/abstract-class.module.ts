@@ -11,14 +11,14 @@ import { Furniture } from './Class/furniture';
 import { Cupboard } from './Class/cupboard';
 import { Sofa } from './Class/sofa';
 import { Table } from './Class/table';
-
+import {MyHeaderModule} from './../my-header/my-header.component.module'
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    AbstractClassPageRoutingModule
+    AbstractClassPageRoutingModule, MyHeaderModule
   ],
   declarations: [AbstractClassPage]
 })
