@@ -13,8 +13,8 @@ export class Exam implements iInfo, iShow {
     this.subject = subject;
   }
 
-  isHard(complexity: number) {
-    if (complexity >= 65) return true;
+  isHard() {
+    if (this.complexity >= 65) return true;
     else return false;
   }
 
