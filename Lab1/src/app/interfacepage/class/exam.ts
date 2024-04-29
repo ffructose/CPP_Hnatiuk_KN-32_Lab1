@@ -19,6 +19,6 @@ export class Exam implements iInfo, iShow {
   }
 
   show(): string {
-    return (this.name + " з предмету " + this.subject + " що відбудеться на " + this.course + "буде мати складність" + this.complexity);
+    return (this.name + " з предмету " + this.subject + " що відбудеться на " + this.course + " курсі буде мати складність " + this.complexity);
   }
 }
