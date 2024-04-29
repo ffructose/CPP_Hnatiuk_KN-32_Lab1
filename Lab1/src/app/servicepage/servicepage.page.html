@@ -8,12 +8,55 @@
 
     <ion-card-content>
       <h1 class="task_h1">
+        вивести результати усіх розрахунків та побудувати графіки для усіх обрахунків
       </h1>
+      <div class="img_formula"></div>
 
       <ion-card-content>
-        <ion-button >Тиць</ion-button>
-        <ion-item></ion-item>
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+              <ion-item>
+                <ion-label position="floating">Xn</ion-label>
+                <ion-input type="number" id="xn" placeholder="-3.14" value="-3.14" [(ngModel)]="Inputxn"></ion-input>
+              </ion-item>
+            </ion-col>
+            <ion-col>
+              <ion-item>
+                <ion-label position="floating">Xk</ion-label>
+                <ion-input type="number" id="xk" placeholder="3.14" value="3.14" [(ngModel)]="Inputxk"></ion-input>
+              </ion-item>
+            </ion-col>
+            <ion-col>
+              <ion-item>
+                <ion-label position="floating">h</ion-label>
+                <ion-input type="number" id="h" placeholder="0.5" value="0.5" [(ngModel)]="Inputh"></ion-input>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+        <ion-button color="danger" expand="block" (click)="res(Inputxn, Inputxk, Inputh)"
+          (click)="graph(Inputxn, Inputxk, Inputh)">
+          Тиць
+        </ion-button>
+
+
       </ion-card-content>
+
+      <ion-card>
+
+        <ion-card-content>
+          <canvas #lineCanvas></canvas>
+
+          <ion-item *ngFor="let item of xyInput | keyvalue">
+            <ion-label>
+              <h4>{{item.key}}</h4>
+              <h4>{{item.value}}</h4>
+            </ion-label>
+          </ion-item>
+        </ion-card-content>
+      </ion-card>
+
     </ion-card-content>
 
   </ion-card>

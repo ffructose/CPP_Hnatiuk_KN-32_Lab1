@@ -16,7 +16,7 @@
     </ion-card-content>
     <ion-card-content>
       <ion-input id="x" type="number" placeholder="10" [(ngModel)]="Inputx"></ion-input>
-      <ion-button (click)="res(Inputx)" >Порахувати</ion-button>
+      <ion-button color="danger" expand="block" (click)="res(Inputx)" >Порахувати</ion-button>
       <p >{{getAverage()}}</p>
       <p *ngFor="let fur of furniture" >{{fur.show()}}</p>
     </ion-card-content>
