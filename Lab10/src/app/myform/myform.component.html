@@ -1,0 +1,73 @@
+
+
+<form [formGroup]="subjectsForm" (ngSubmit)="onSubmit()">
+  <ion-card>
+    <ion-card-content>
+      <ion-card-header>
+        <ion-card-title> Перелік основних дисциплін: </ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+
+        <ion-item>
+          <ion-label position="floating">Назва дисципліни</ion-label>
+          <ion-input id="subject-name" type="text" formControlName="subjectName"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Кафедра, на якій читається дисципліна</ion-label>
+          <ion-input id="kafedra-name" type="text" formControlName="kafedraName"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Кількість лекційних занять</ion-label>
+          <ion-input id="lections-amount" type="text" formControlName="lectionsAmount"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Кількість лабораторних занять</ion-label>
+          <ion-input id="labs-amount" type="text" formControlName="labsAmount"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Вид контролю</ion-label>
+          <ion-input id="control-type" type="text" formControlName="controlType"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">ПІБ викладача, який читає лекції</ion-label>
+          <ion-input id="teacher-labs" type="text" formControlName="teacherLabs"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">ПІБ викладача, що веде лабораторні заняття</ion-label>
+          <ion-input id="teacher-lections" type="text" formControlName="teacherLections"></ion-input>
+        </ion-item>
+
+        <ion-card formArrayName="teachersList">
+
+          <ion-card-header>
+            <ion-card-title> Список викладачів, що викладають дисципліну </ion-card-title>
+          </ion-card-header>
+
+          <ion-card-content>
+            <ion-button (click)="addTeacher()" color="danger" expand="block">
+              <ion-icon slot="start" name="add"></ion-icon>
+              додати
+            </ion-button>
+            <ion-item *ngFor="let teacher of getControls(); let i = index">
+              <ion-input type="text" formControlName="{{i}}" placeholder="ПІБ викладача"></ion-input>
+              <ion-button (click)="deleteTeacher(i)" color="danger" expand="block">
+                <ion-icon slot="start" name="trash"></ion-icon>
+                Видалити
+              </ion-button>
+            </ion-item>
+          </ion-card-content>
+        </ion-card>
+      </ion-card-content>
+    </ion-card-content>
+  </ion-card>
+  <ion-button type="submit" color="danger" expand="block" fill="outline" [disabled]="!subjectsForm.valid">
+    Підтвердити
+  </ion-button>
+</form>
