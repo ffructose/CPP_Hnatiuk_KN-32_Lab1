@@ -1,7 +1,0 @@
-{
-  "name": "Lab10",
-  "integrations": {
-    "capacitor": {}
-  },
-  "type": "angular"
-}
