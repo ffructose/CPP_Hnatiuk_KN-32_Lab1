@@ -57,7 +57,6 @@ export class MyformComponent implements OnInit {
     let tLections = this.subjectsForm.value.teacherLections;
     let tList = this.subjectsForm.value.teachersList;
     let valid = new ValidatorService();
-    let i = 0;
     if (!valid.validate_amount(lecA) || !valid.validate_amount(labA) || !valid.validate_type(conT)) {
       this.presentAlert("Перевірте введені дані");
     }
