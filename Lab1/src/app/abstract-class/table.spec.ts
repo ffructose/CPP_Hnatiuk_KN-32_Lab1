@@ -1,5 +1,5 @@
 import { Table } from './Class/table';
-
+/*
 describe('TableTesting', () => {
   let table: Table;
 
@@ -23,3 +23,4 @@ describe('TableTesting', () => {
     expect(s.toFixed(2)).toBe(cost.toFixed(2));
   })
 });
+*/

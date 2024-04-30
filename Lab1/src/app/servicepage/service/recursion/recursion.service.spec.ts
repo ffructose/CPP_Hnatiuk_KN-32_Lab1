@@ -2,7 +2,7 @@ import { TestBed } from '@angular/core/testing';
 
 import { RecursionService } from './recursion.service';
 
-describe('RecursionService', () => {
+describe('Лаб7 - RecursionService', () => {
   let service: RecursionService;
 
   beforeEach(() => {
@@ -14,12 +14,12 @@ describe('RecursionService', () => {
     expect(service).toBeTruthy();
   });
 
-  it('Сума ряду за допомогою рекурсії x=0.1 y=0.9983', () => {
-    let x = 0.1;
-    let y = 0.9983;
-    let y1 = 1;
-    service.getRecursion(x, -1, 1, 2, y1);
+  it('Сума ряду за допомогою рекурсії x=-0.1 y=0.1', () => {
+    let x = -0.1;
+    let y = 0.1;
+    let yRec = service.getRecursion(x, 0, 0);
+    expect(y.toFixed(2)).toBe(yRec.toFixed(2));
 
-    expect(y.toFixed(2)).toBe(y1.toFixed(2));
+    service.getTab(-3.14,3.14,0.1);
   });
 });

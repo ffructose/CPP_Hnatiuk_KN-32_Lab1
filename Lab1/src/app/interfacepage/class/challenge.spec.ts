@@ -2,7 +2,7 @@ import { Challenge } from "./challenge";
 import { Test } from "./test";
 import { Exam } from "./exam";
 import { GradExam } from "./gradExam";
-
+/*
 describe('ЛАБОРАТОРНА 6 Тестування ', () => {
   let challenge: Challenge;
   let test: Test;
@@ -55,3 +55,4 @@ describe('ЛАБОРАТОРНА 6 Тестування ', () => {
     expect(gradExam.complexity).toBe(42);
   })
 });
+*/

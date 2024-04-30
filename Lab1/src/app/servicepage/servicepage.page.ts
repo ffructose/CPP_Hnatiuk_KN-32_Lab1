@@ -35,6 +35,20 @@ export class ServicepagePage implements OnInit {
   xySeries = new Map();
   xyRecursion = new Map();
   xyInput = new Map();
+  input() {
+    this.xyTab.forEach((value, key, map) => {
+      let s = '';
+      let y: number = 0;
+      y = value;
+      s = y.toFixed(4) + " ";
+      y = this.xySeries.get(key);
+      s = s + y.toFixed(4);
+      y = this.xyRecursion.get(key);
+      s = s + " " + y.toFixed(4);
+      let x = key;
+      this.xyInput.set(x.toFixed(2), s);
+    })
+  }
 
   res(xn: any = -3.14, xk: any = 3.14, h: any = 0.1) {
     this.xn = parseFloat(xn);
@@ -49,19 +63,7 @@ export class ServicepagePage implements OnInit {
     this.input();
   }
 
-  input() {
-    this.xyTab.forEach((value, key, map) => {
-      let s = '', y: number = 0;
-      y = value;
-      s = y.toFixed(4) + " ";
-      y = this.xySeries.get(key);
-      s = s + y.toFixed(4);
-      y = this.xyRecursion.get(key);
-      s = s + " " + y.toFixed(4);
-      let x = key;
-      this.xyInput.set(x.toFixed(2), s);
-    })
-  }
+
 
 
   lineChartMethod() {

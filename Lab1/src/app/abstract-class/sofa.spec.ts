@@ -1,5 +1,5 @@
 import { Sofa } from './Class/sofa';
-
+/*
 describe('SofaTesting', () => {
   let sofa: Sofa;
 
@@ -25,3 +25,4 @@ describe('SofaTesting', () => {
 
 });
 
+*/

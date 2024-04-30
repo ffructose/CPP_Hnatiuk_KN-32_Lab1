@@ -2,7 +2,7 @@ import { TestBed } from '@angular/core/testing';
 
 import { TabService } from './tab.service';
 
-describe('TabService', () => {
+describe('Лаб7 - TabService', () => {
   let service: TabService;
 
   beforeEach(() => {
@@ -14,14 +14,15 @@ describe('TabService', () => {
     expect(service).toBeTruthy();
   });
 
-  it('Tabulating x=0.1, y=0.9983', () => {
-    let x = 0.1;
-    let y = 0.9983;
-    let xy = service.getTab();
-    let y1: number | undefined = 5;
-    y1 = xy.get(x);
-    if (y1 !== undefined) {
-      expect(y.toFixed(4)).toBe(y1.toFixed(4));
+  it('Табулювання x=-0.1, y=0.1', () => {
+    let x = -0.1;
+    let y = 0.1;
+    let xy = service.getTab(-0.1,-0.1,0.1);
+    let yTab: number | undefined = 5;
+    yTab = xy.get(y);
+    if (yTab !== undefined) {
+      expect(y.toFixed(4)).toBe(yTab.toFixed(4));
     }
+    service.getTab(-3.14,3.14,0.1);
   });
 });

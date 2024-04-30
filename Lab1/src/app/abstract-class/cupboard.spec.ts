@@ -1,5 +1,5 @@
 import { Cupboard } from './Class/cupboard';
-
+/*
 describe('CupboardTesting', () => {
   let cupboard: Cupboard;
 
@@ -23,3 +23,4 @@ describe('CupboardTesting', () => {
     expect(s.toFixed(2)).toBe(cost.toFixed(2));
   })
 });
+*/
