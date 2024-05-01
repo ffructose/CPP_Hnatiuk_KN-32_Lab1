@@ -1,0 +1,23 @@
+<app-myform (SubjectAdd)="addSubject($event)"> </app-myform>
+
+<ion-card *ngFor="let subject of subjects; let i=index">
+  <ion-card-header>
+    <ion-card-title> {{subject.subjectName}} </ion-card-title>
+    <ion-card-subtitle>{{subject.kafedraName}} </ion-card-subtitle>
+  </ion-card-header>
+  <ion-card-content>
+    <p> Кількість лекційних занять: {{subject.lectionsAmount}}</p>
+    <p> Кількість лабораторних занять: {{subject.labsAmount}}</p>
+    <p> Вид контролю: {{subject.controlType}}</p>
+    <p> ПІБ викладача, що веде лабораторні заняття: {{subject.teacherLabs}}</p>
+    <p> ПІБ викладача, що веде лекційні заняття: {{subject.teacherLections}}</p>
+    <P> Список викладачів, що викладають дисципліну: </P>
+    <ion-item *ngFor="let teacher of subject.teachersList">
+      {{teacher}}
+    </ion-item>
+  </ion-card-content>
+  <ion-button color="danger" (click)="update()">Редагувати</ion-button>
+  <app-updateform [subject]="subject" [show]="show_update" *ngIf="show_update" (showChange)="showUp($event)"
+    (subjectChange)="update_save($event,i)">
+  </app-updateform>
+</ion-card>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormControl, FormGroup, FormArray, FormBuilder } from '@angular/forms';
 import { Subjects } from './Class/subjects';
 import { Validators } from '@angular/forms';
@@ -17,7 +17,7 @@ export class MyformComponent implements OnInit {
   subjectsForm!: FormGroup;
   subjects!: Subjects;
 
-
+  @Output() SubjectAdd: EventEmitter<Subjects> = new EventEmitter<Subjects>();
 
 
   constructor(private fb: FormBuilder, private alertController: AlertController) {
@@ -63,6 +63,8 @@ export class MyformComponent implements OnInit {
     else {
       this.subjects = new Subjects(subN, kafN, lecA, labA, conT, tLabs, tLections, tList);
       console.log("submit");
+      console.log(this.subjects);
+      this.SubjectAdd.emit(this.subjects);
     }
   }
 

@@ -1,0 +1,37 @@
+<ion-card>
+  <ion-card-header>
+    <ion-card-title>
+      <ion-label position="floating">Дисципліна</ion-label>
+      <ion-input [value]="subject.subjectName" #InputsubN></ion-input>
+    </ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+    <ion-item>
+      <ion-label position="floating">Кафедра, на якій читається дисципліна</ion-label>
+      <ion-input [value]="subject.kafedraName" #InputkafN></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Кількість лекційних занять</ion-label>
+      <ion-input [value]="subject.lectionsAmount" #InputlecA></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Кількість лабораторних занять</ion-label>
+      <ion-input [value]="subject.labsAmount" #InputlabA></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Вид контролю</ion-label>
+      <ion-input [value]="subject.controlType" #InputconT></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">ПІБ викладача, що веде лабораторні заняття</ion-label>
+      <ion-input [value]="subject.teacherLabs" #InputtLabs></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">ПІБ викладача, що веде лекційні заняття</ion-label>
+      <ion-input [value]="subject.teacherLections" #InputtLections></ion-input>
+    </ion-item>
+  </ion-card-content>
+  <ion-button color="danger"
+    (click)="save(InputsubN.value, InputkafN.value, InputlecA.value, InputlabA.value, InputconT.value,  InputtLabs.value, InputtLections.value)">Зберегти
+  </ion-button>
+</ion-card>
