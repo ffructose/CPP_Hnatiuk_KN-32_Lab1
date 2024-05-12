@@ -1,0 +1,30 @@
+
+{
+  "0":[{
+  "group": "КН-31",
+  "course": 4,
+  "president": "Білак Любомир",
+  "amount": 28
+        }],
+  "1":[{
+  "group": "КН-32",
+  "course": 3,
+  "president": "Веріємчук Денис",
+  "amount": 31
+        }],
+  "2":[{
+  "group": "КН-21",
+  "course": 2,
+  "president": "Лагодна Валерія",
+  "amount": 10
+        }],
+  "3":[{
+  "group": "КН-11",
+  "course": 1,
+  "president": "Козімова Ріана",
+  "amount": 30
+        }]
+
+
+}
+
