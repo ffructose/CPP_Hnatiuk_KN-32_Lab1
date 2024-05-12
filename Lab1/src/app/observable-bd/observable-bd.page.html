@@ -1,4 +1,4 @@
-<app-my-header name="Лабораторна робота №10"></app-my-header>
+<app-my-header name="Лабораторна робота №11"></app-my-header>
 
 <ion-content [fullscreen]="true" class="ion-padding">
   <ion-card>
@@ -31,8 +31,12 @@
   </ion-card>
 
   <ion-card>
-    <ion-item *ngFor="let actor of actorList.searchActorResult; let j = index">
-      {{actor}}
+    <ion-item *ngFor="let actor of actorList.searchActor; let j = index">
+      <ion-item> {{actor.name}}</ion-item>
+      <ion-item> {{actor.age}}</ion-item>
+      <ion-item> {{actor.homecity}}</ion-item>
+      <ion-item> {{actor.nationality}}</ion-item>
+      <ion-item> {{actor.gender}}</ion-item>
     </ion-item>
   </ion-card>
 

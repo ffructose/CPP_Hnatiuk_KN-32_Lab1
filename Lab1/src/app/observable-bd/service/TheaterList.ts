@@ -3,6 +3,6 @@ export class TheaterList {
   theat = new Array();
   constructor() {  }
   add(theater: Theater) {
-    this.theat.push();
+    this.theat.push(theater);
   }
 }

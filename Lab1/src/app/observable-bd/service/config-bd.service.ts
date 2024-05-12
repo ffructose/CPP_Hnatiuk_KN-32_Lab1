@@ -6,7 +6,7 @@ import { Observable, BehaviorSubject } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class ConfigService {
+export class ConfigBdService {
   // current theater
   currentTheat = DEFAULT_THEAT;
   // object supervisor

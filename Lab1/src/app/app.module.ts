@@ -9,13 +9,18 @@ import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { AngularFireModule } from '@angular/fire/compat';
 
 @NgModule({
-  declarations: [AppComponent],
-  imports: [BrowserModule, IonicModule.forRoot(),
-    AppRoutingModule, AngularFireModule.initializeApp(environment.firebase),
-    provideFirebaseApp(() => initializeApp(environment.firebase)),],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  declarations: [AppComponent,
 
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+  ],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+
+  ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  providers: [{
+    provide: RouteReuseStrategy, useClass: IonicRouteStrategy,
+   }],
   bootstrap: [AppComponent],
 })
 export class AppModule { }

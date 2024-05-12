@@ -1,5 +1,5 @@
 import { Actor } from "./Actor";
-import { ConfigService } from "./config.service";
+import { ConfigBdService } from "./config-bd.service";
 
 export class ActorList {
   // array with list of actors
@@ -16,7 +16,7 @@ export class ActorList {
       this.search(theat.id);
     });
 
-  constructor(private configService: ConfigService) {  }
+  constructor(private configService: ConfigBdService) {  }
 
   add(actor: Actor) {
     this.actorList.push(actor);
