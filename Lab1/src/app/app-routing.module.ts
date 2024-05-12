@@ -28,6 +28,10 @@ const routes: Routes = [
   {
     path: 'observablepage',
     loadChildren: () => import('./observablepage/observablepage.module').then( m => m.ObservablepagePageModule)
+  },
+  {
+    path: 'observable-bd',
+    loadChildren: () => import('./observable-bd/observable-bd.module').then( m => m.ObservableBdPageModule)
   }
 
 ];
