@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { TheaterList } from './service/TheaterList';
 import { ActorList } from './service/ActorList';
-import { Actor } from './service/Actor';
-import { Observable, BehaviorSubject, Subscription } from 'rxjs';
+import { TheaterList } from './service/TheaterList';
 import { Theater } from './service/Theater';
+import { Observable, BehaviorSubject, Subscription } from 'rxjs';
+import { Actor } from './service/Actor';
 import { ConfigService } from './service/config.service';
 
 @Component({
@@ -12,46 +12,49 @@ import { ConfigService } from './service/config.service';
   styleUrls: ['./observablepage.page.scss'],
 })
 export class ObservablepagePage implements OnInit {
-  acts = new ActorList();
+  theats = new TheaterList();
 
   configService = new ConfigService();
 
   subscriptions: Subscription[] = [];
 
-  theaterList = new TheaterList(this.configService);
+  actorList = new ActorList(this.configService);
 
-  act: Actor = new Actor();
+  theat: Theater = new Theater();
 
   count = 0;
 
   constructor() { }
 
   ngOnInit() {
-    const actSub = this.configService.act$
-      .subscribe(() => { this.act = this.configService.act$.value; });
-    this.subscriptions.push(actSub);
+    const theatSub = this.configService.theat$
+      .subscribe(() => { this.theat = this.configService.theat$.value; });
+    this.subscriptions.push(theatSub);
   }
-  nextAct() {
-    if (this.count < this.acts.act.size - 1) {
+  nextTheat() {
+    if (this.count < this.theats.theat.size - 1) {
       this.count++;
     }
     else this.count = 0;
-    this.configService.setAct(this.acts.act.get(this.count));
+    this.configService.setTheat(this.theats.theat.get(this.count));
   }
 
-  addTheater(name: any, address: any) {
-    let theater = new Theater();
-    theater.name = name;
-    theater.address = address;
-    theater.act_id = this.act.id;
-    this.theaterList.add(theater);
+  addActor(name: any, age: any, homecity: any, nationality: any, gender: any) {
+    let actor = new Actor();
+    actor.name= name;
+    actor.age= age;
+    actor.homecity= homecity;
+    actor.nationality= nationality;
+    actor.gender= gender;
+    actor.id_theat= this.theat.id;
+    this.actorList.add(actor);
   }
 
-  addAct(act: any) {
-    let a = new Actor();
-    a.id = this.acts.act.size;
-    a.name = act;
-    this.acts.add(a);
+  addTheat(theat: any) {
+    let t = new Theater();
+    t.id = this.theats.theat.size;
+    t.name = theat;
+    this.theats.add(t);
   }
   ngOnDestroy() {
     this.subscriptions

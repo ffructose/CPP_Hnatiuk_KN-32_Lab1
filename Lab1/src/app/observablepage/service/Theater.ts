@@ -1,5 +1,4 @@
 export class Theater {
+  id: number = 0;
   name: string = "";
-  act_id: number = 0;
-  address: string = "";
 }

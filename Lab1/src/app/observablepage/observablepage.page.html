@@ -12,46 +12,82 @@
       </h1>
     </ion-card-content>
 
+
     <ion-item>
-      <ion-button (click)="nextTheat()">Наступний театр</ion-button>
       <ion-label>
-        Поточний театр:
-      </ion-label>
-      <ion-label>
-        {{theater.name}}
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+              <ion-item>Поточний театр:</ion-item>
+            </ion-col>
+            <ion-col>
+              <ion-item>{{theat.name}}</ion-item>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
       </ion-label>
     </ion-item>
+    <ion-button (click)="nextTheat()" color="danger" expand="block">Наступний театр</ion-button>
+  </ion-card>
+
+  <ion-card>
     <ion-item *ngFor="let actor of actorList.searchActorResult; let j = index">
       {{actor}}
     </ion-item>
-    <ion-item>
-      <ion-label position="stacked">Введіть новий театр</ion-label>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>
+        Додати Театр
+      </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-label position="stacked">Введіть назву нового театру</ion-label>
       <ion-input #InputTheater></ion-input>
-      <ion-button (click)="addTheat(InputTheater.value)">Додати театр</ion-button>
-    </ion-item>
-    <ion-card>
-      <ion-card-header>
-        <ion-card-title>
-          Додати актора
-        </ion-card-title>
-      </ion-card-header>
-      <ion-card-content>
-        <ion-label position="stacked">Введіть ПІБ</ion-label>
-        <ion-input #InputName></ion-input>
-        <ion-label position="stacked">Введіть вік</ion-label>
-        <ion-input #InputAge></ion-input>
-        <ion-label position="stacked">Введіть місто народження</ion-label>
-        <ion-input #InputHomecity></ion-input>
-        <ion-label position="stacked">Введіть національність</ion-label>
-        <ion-input #InputNationality></ion-input>
-        <ion-label position="stacked">Введіть гендер</ion-label>
-        <ion-input #InputGender></ion-input>
-        <ion-button
-          (click)="addActor(InputName.value,InputAge.value,InputHomecity.value,InputNationality.value,InputGender.value)">
-          Додати актора
-        </ion-button>
-      </ion-card-content>
-    </ion-card>
+      <ion-button color="danger" expand="block" (click)="addTheat(InputTheater.value)">Додати театр</ion-button>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>
+        Додати актора
+      </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-label position="stacked">Введіть ПІБ</ion-label>
+            <ion-input #InputName></ion-input>
+          </ion-col>
+          <ion-col>
+            <ion-label position="stacked">Введіть вік</ion-label>
+            <ion-input #InputAge></ion-input>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-label position="stacked">Введіть місто народження</ion-label>
+            <ion-input #InputHomecity></ion-input>
+          </ion-col>
+          <ion-col>
+            <ion-label position="stacked">Введіть національність</ion-label>
+            <ion-input #InputNationality></ion-input>
+          </ion-col>
+          <ion-col>
+            <ion-label position="stacked">Введіть гендер</ion-label>
+            <ion-input #InputGender></ion-input>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <ion-button color="danger" expand="block"
+        (click)="addActor(InputName.value,InputAge.value,InputHomecity.value,InputNationality.value,InputGender.value)">
+        Додати актора
+      </ion-button>
+    </ion-card-content>
+
 
   </ion-card>
 </ion-content>

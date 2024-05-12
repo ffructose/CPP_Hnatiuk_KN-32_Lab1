@@ -1,4 +1,8 @@
 export class Actor {
-  id: number = 0;
   name: string = "";
+  age: number = 0;
+  homecity: string = "";
+  nationality: string = "";
+  gender: string = "";
+  id_theat: number = 0;
 }

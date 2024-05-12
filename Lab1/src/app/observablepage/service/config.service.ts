@@ -1,5 +1,5 @@
-import { ActorList } from './ActorList';
-import { Actor } from './Actor';
+import { TheaterList } from './TheaterList';
+import { Theater } from './Theater';
 import { Injectable } from '@angular/core';
 import { Observable, BehaviorSubject } from 'rxjs';
 
@@ -7,19 +7,19 @@ import { Observable, BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class ConfigService {
-  // current actor
-  currentAct = DEFAULT_ACT;
+  // current theater
+  currentTheat = DEFAULT_THEAT;
   // object supervisor
-  act$: BehaviorSubject<Actor> = new BehaviorSubject<Actor>(DEFAULT_ACT);
-  // change of current actor to a new actor
-  setAct(act: Actor){
+  theat$: BehaviorSubject<Theater> = new BehaviorSubject<Theater>(DEFAULT_THEAT);
+  // change of current theater to a new theater
+  setTheat(theat: Theater){
     console.log("!!!!!!!!!!CHANGES!!!!!!!!");
     // generation of next value
-    this.act$.next(act);
+    this.theat$.next(theat);
   }
    constructor() { }
 }
-// creating list of actors
-var actorList = new ActorList();
+// creating list of theaters
+var theaterList = new TheaterList();
 // get default value
-const DEFAULT_ACT = actorList.act.get(0);
+const DEFAULT_THEAT = theaterList.theat.get(0);
