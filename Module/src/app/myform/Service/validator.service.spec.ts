@@ -31,7 +31,7 @@ describe('МКР1 - ValidatorService', () => {
 
   it('Перевіряємо кількість стовпчиків/рядків = 1.5', () => {
     let x = service.validate_amount(1.5);
-    expect(x).toBe(true);
+    expect(x).toBe(false);
   });
 
   it('Перевіряємо кількість стовпчиків/рядків = 5.0', () => {
@@ -41,6 +41,6 @@ describe('МКР1 - ValidatorService', () => {
 
   it('Перевіряємо кількість стовпчиків/рядків = 6.99', () => {
     let x = service.validate_amount(6.99);
-    expect(x).toBe(true);
+    expect(x).toBe(false);
   });
 });
