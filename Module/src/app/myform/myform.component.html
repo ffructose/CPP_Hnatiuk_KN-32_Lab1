@@ -1,0 +1,88 @@
+<form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+  <ion-card>
+    <ion-card-content>
+      <ion-card-header>
+        <ion-card-title> Сервіс для обчислення кількості пар однакових за модулем сусідніх елементів у двовимірному
+          масиві: </ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        <ion-grid>
+          <ion-row>
+            Розмірність матриці
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <ion-item>
+                <ion-label position="floating">кількість рядків:</ion-label>
+                <ion-input id="amount-rows" type="number" formControlName="amountRows"></ion-input>
+              </ion-item>
+            </ion-col>
+            <ion-col>
+              <ion-item>
+                <ion-label position="floating">кількість стовпчиків:</ion-label>
+                <ion-input id="amount-cols" type="number" formControlName="amountCols"></ion-input>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+
+        <ion-item>
+          <ion-grid>
+            <ion-row>
+              <ion-label position="stuck">Згенерувати масив випадковим чином?</ion-label>
+            </ion-row>
+            <ion-row>
+              <ion-col>
+                <ion-button (click)="fillRandomNumbers()" color="danger" expand="block">
+                  Так
+                </ion-button>
+              </ion-col>
+              <ion-col>
+                <ion-button (click)="fillZeroes()" color="danger" expand="block">
+                  Ні, ввести дані вручну
+                </ion-button>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-item>
+      </ion-card-content>
+    </ion-card-content>
+
+    <ion-card *ngIf="isRandom">
+      <ion-card-content>
+        <table class="styled-table">
+          <tbody>
+            <tr *ngFor="let row of array">
+              <td *ngFor="let cell of row">
+                {{ cell }}
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card *ngIf="!isRandom">
+      <ion-card-content>
+        <table class="styled-table">
+          <tbody>
+            <tr *ngFor="let row of array; let i = index">
+              <td *ngFor="let cell of row; let j = index">
+                <ion-input type="number" [value]="cell" (input)="handleInput(i, j, $event)"></ion-input>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </ion-card-content>
+    </ion-card>
+
+  </ion-card>
+
+  <ion-button (click)="onSubmit()" type="submit" color="danger" expand="block" fill="outline"
+    [disabled]="!myForm.valid">
+    Підтвердити
+  </ion-button>
+
+
+</form>

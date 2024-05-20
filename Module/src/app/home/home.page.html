@@ -1,20 +1,41 @@
 <ion-header [translucent]="true">
+  <ion-toolbar color="danger">
+    <ion-buttons slot="start">
+      <ion-menu-button color="dark" menu="first"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Модульна контрольна робота 1 (перескладання)
+    </ion-title>
+  </ion-toolbar>
+
   <ion-toolbar>
     <ion-title>
-      Blank
+      Гнатюк Анна
+    </ion-title>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-title>
+      КН-32 Варіант №1
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <app-myform (operationResult)="handleOperationResult($event)"></app-myform>
+
+  <ion-card *ngIf="operationResults?.printResult === true">
+    <ion-card-content>
+      <table class="styled-table">
+        <tbody>
+          <tr *ngFor="let row of operationResults?.array; let i = index">
+            <td *ngFor="let cell of row; let j = index" [ngClass]="{'highlight': highlightedCells.has(i + '-' + j)}">
+              {{ cell }}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </ion-card-content>
+  </ion-card>
+
 </ion-content>

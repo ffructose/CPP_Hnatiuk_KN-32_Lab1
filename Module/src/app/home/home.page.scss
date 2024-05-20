@@ -25,3 +25,23 @@
 #container a {
   text-decoration: none;
 }
+
+
+
+.styled-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.styled-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+  font-size: 24px;
+}
+
+.highlight {
+  background-color: pink;
+  color: white;
+  
+}
