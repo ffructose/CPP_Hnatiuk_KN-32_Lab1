@@ -35,10 +35,28 @@
             </ion-col>
           </ion-row>
         </ion-grid>
-        <ion-button color="danger" expand="block" (click)="res(Inputxn, Inputxk, Inputh)"
-          (click)="graph(Inputxn, Inputxk, Inputh)">
+        <ion-button color="danger" expand="block" (click)="res(Inputxn, Inputxk, Inputh)">
           Тиць
         </ion-button>
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+              <ion-button color="danger" (click)="graphRecursion(Inputxn, Inputxk, Inputh, 'Рекурсія')">
+                Рекурсія
+              </ion-button>
+            </ion-col>
+            <ion-col>
+              <ion-button color="danger" (click)="graphSeries(Inputxn, Inputxk, Inputh, 'Серія')">
+                Серія
+              </ion-button>
+            </ion-col>
+            <ion-col>
+              <ion-button color="danger" (click)="graphTab(Inputxn, Inputxk, Inputh, 'Табуляція')">
+                Табуляція
+              </ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
 
 
       </ion-card-content>

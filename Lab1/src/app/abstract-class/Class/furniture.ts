@@ -4,7 +4,7 @@ export abstract class Furniture {
   cost!: number;
 
   constructor(name: string, value: number) {
-    if (value <= 0) throw new Error('cost<=0');
+    if (value <= 0) throw new Error('value<=0');
     this.name = name;
     this.value = value;
   }

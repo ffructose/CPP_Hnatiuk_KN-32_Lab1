@@ -66,7 +66,7 @@ export class ServicepagePage implements OnInit {
 
 
 
-  lineChartMethod() {
+  lineChartMethod(nameOfChart: string = "Графік") {
 
     if (this.lineChart instanceof Chart) {
       this.lineChart.destroy();
@@ -79,7 +79,7 @@ export class ServicepagePage implements OnInit {
         labels: this.xx, // точки осі х
         datasets: [ // властивості, що створюють графік
           {
-            label: 'Графік',
+            label: nameOfChart,
 
             fill: false,
             borderColor: 'rgba(199, 58, 110, 0.9)',
@@ -91,7 +91,7 @@ export class ServicepagePage implements OnInit {
     });
   }
 
-  graph(xn: string = "-3.14", xk: string = "3.14", h: string = "0.5") {
+  graphSeries(xn: string = "-3.14", xk: string = "3.14", h: string = "0.5", nameOfChart: string = "Графік") {
 
     this.xn = parseFloat(xn);
     this.xk = parseFloat(xk);
@@ -106,10 +106,48 @@ export class ServicepagePage implements OnInit {
       this.yy.push(parseFloat(this.xySeries.get(x)));
       x = x + this.h;
     }
-
-    this.lineChartMethod();
+    this.lineChartMethod(nameOfChart);
 
   }
+
+  graphRecursion(xn: string = "-3.14", xk: string = "3.14", h: string = "0.5", nameOfChart: string = "Графік") {
+
+    this.xn = parseFloat(xn);
+    this.xk = parseFloat(xk);
+    this.h = parseFloat(h);
+    let x: number;
+    x = this.xn;
+    this.xx = new Array();
+    this.yy = new Array();
+
+    while (x <= this.xk) {
+      this.xx.push(x.toFixed(2));
+      this.yy.push(parseFloat(this.xyRecursion.get(x)));
+      x = x + this.h;
+    }
+    this.lineChartMethod(nameOfChart);
+
+  }
+
+  graphTab(xn: string = "-3.14", xk: string = "3.14", h: string = "0.5", nameOfChart: string = "Графік") {
+
+    this.xn = parseFloat(xn);
+    this.xk = parseFloat(xk);
+    this.h = parseFloat(h);
+    let x: number;
+    x = this.xn;
+    this.xx = new Array();
+    this.yy = new Array();
+
+    while (x <= this.xk) {
+      this.xx.push(x.toFixed(2));
+      this.yy.push(parseFloat(this.xyTab.get(x)));
+      x = x + this.h;
+    }
+    this.lineChartMethod(nameOfChart);
+
+  }
+
 
   ngOnInit() {
   }
